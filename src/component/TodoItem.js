@@ -1,12 +1,6 @@
-const TodoItem = props => {
-  const { todo, setChecked } = props
+const TodoItem = ({ todo, setChecked, setDelete }) => {
   const checked = e => {
     setChecked(todo, e.target.checked)
-    window.console.log('e.target.checked:' + e.target.checked)
-    window.console.log(todo.value)
-  }
-  const onDelete = () => {
-    props.setDelete(todo.id)
   }
   return (
     <div>
@@ -14,7 +8,7 @@ const TodoItem = props => {
         <input type="checkbox" checked={todo.value} onChange={checked} />
         <span>{todo.id}</span>
         {todo.todo}
-        <button onClick={onDelete}>X</button>
+        <button onClick={() => setDelete(todo.id)}>X</button>
       </p>
     </div>
   )

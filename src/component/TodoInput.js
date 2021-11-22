@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-const TodoInput = props => {
-  const { item, setItem } = props
+const TodoInput = ({ setItem }) => {
   const inlineStyle = {
     marginLeft: '10px',
   }
